@@ -1,0 +1,61 @@
+-> VD Xây 1 ứng dụng hỗ trợ hỏi đáp AI, dựa trên tập data từ SQL: https://www.freecodecamp.org/news/talk-to-databases-using-ai-build-a-sql-query-data-extractor/ 
+Dùng GroqAI cho AI model train với data rồi tương tác qua API bằng CopilotKit, sẽ tự động xử lý NLP và mọi thứ chuyên cho chat. Có thể dùng vector graph
+=> Các ứng dụng AI khác cũng xây theo quy trình tương tự
+
+-> AI auto complete code như amazon q, github copilot, cursor, google antigravity
+
+-> AI Design web như https://readdy.ai, claude.ai/design
+
+-> AI hỏi đáp, artifact tạo tác, sửa code, tạo image như chatgpt, claude, qwen
+arena.ai, chatday.ai, app.ashna.ai
+
+-> Vibe code cmd hoặc prompt như google antigravity, claude code, cursor, github copilot trả phí, https://aistudio.google.com, https://bolt.new
+Dùng claude code free với local model của ollama, hoặc dùng gemini model với gg antigravity, gpt model với codex, cursor. 
+Gemini cli free dùng nhiều và mạnh nhất, claude code ollama vô hạn.
+
+-> AI luyện hỏi đáp phỏng vấn như Clave Prep
+
+-> AI hack phỏng vấn bằng giọng nói như parakeet => mất phí
+
+-> Xây dựng ứng dụng đưa ra quyết định dùng AI bằng cách yêu cầu chuẩn form cho request và response kết hợp tool calling và mcp server để AI gọi.
+Lấy API key từ các nền tảng set vào để dùng
+
+-> Với 1 model AI bth, có thể áp dụng skills để nó có thể làm chuyên nghiệp 1 mảng nào đó
+VD skill AI design UI tự động cực mạnh: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+VD skill AI tạo crazy animation: https://github.com/greensock/gsap-skills
+VD skill clone website: https://github.com/JCodesMore/ai-website-cloner-template
+VD skill biến docs thành markdown: https://github.com/firecrawl/anydoc
+Serena bổ sung khả năng xử lý code cho AI.
+
+-> AI đọc code từ repo và sinh document giải thích code. VD DeepWiki
+
+-> AI tạo logo và animate logo: https://www.logoai.com/
+
+-> AI làm nét ảnh: https://imgupscaler.ai/
+AI tạo video từ ảnh, xoá background: https://vmake.ai/
+
+-> https://github.com/firecrawl/anydoc => tool open-source biến mọi loại docs thành markdown có thể dùng làm skill cho AI
+
+-> AI build animmated component mà có thể tuỳ chỉnh, có đủ 3D, crazy animation: https://brik.space
+
+-> Các tính năng AI của agent trong antigravity IDE hoặc chat gpt:
+Chatbot, auto complete code, add file context, sửa file, vibe code.
+Dùng các tool có sẵn như tạo ảnh, lên lịch schedule. Dùng plugin cho AI tương tác với các ứng dụng cloud khác.
+Thêm các skill, mcp server để agent có các tính năng xịn và tương tác ra bên ngoài được.
+Tạo nhiều agent chạy song song. Có thể để agent tự thêm context md file, tự thêm skill.
+
+-> https://www.skills.sh/ 
+Có thể cắm skill tạo video bằng code để AI tạo video dù ban đầu k có chức năng đó: https://www.youtube.com/watch?v=Yj5LpSq_7xI
+Tạo video từ voice over có trước
+
+-> Các cách thêm MCP server vào antigravity để agent gọi tool calling:
+Dùng MCP Store có sẵn các MCP Server
+Sửa file config mcp server để thêm custom MCP Server
+1 số extension khi cài cũng tự thêm mcp server cho agent.
+
+-> opencode.ai => tool free thay thế claude code: https://www.youtube.com/watch?v=Gu9lO8oqGYU
+C1 Tạo video 3D với opencode và free ai model chỉ với master prompt. Tts có thể dùng freetts.ai, hoặc google api, hoặc capcut tts free.
+C2 Dùng claude 
+C3 ChatGPT + google flow + capcut tự tạo video
+
+
