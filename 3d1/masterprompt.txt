@@ -1,5 +1,5 @@
 ==============================================================
-10 VẠN CÂU HỎI VÌ SAO - STICKMAN ANIMATION MASTER PROMPT
+100,000 WHYS - STICKMAN ANIMATION MASTER PROMPT (ENGLISH)
 Paste the whole file into Claude Code (or any AI coding agent)
 ==============================================================
 
@@ -13,13 +13,17 @@ LOOK: flat 2D hand-drawn stickman characters (canvas-drawn billboard
 "cards") placed inside a colorful toon-shaded 3D world with ink outlines,
 painted textures and smooth cinematic camera movement.
 
-OUTPUT: 1080p, 30 fps MP4 with Vietnamese voiceover, background music and
+OUTPUT: 1080p, 30 fps MP4 with English voiceover, background music and
 sound effects.
 
 --------------------------------------------------------------
 SERIES RULES (HIGHEST PRIORITY - THESE OVERRIDE EVERYTHING BELOW)
 --------------------------------------------------------------
-SERIES: "10 Vạn Câu Hỏi Vì Sao" (Ten Thousand Whys).
+SERIES: "100,000 Whys". The concept comes from the classic Vietnamese
+children's science book "10 Vạn Câu Hỏi Vì Sao" (literally "100,000
+Whys"). Only the book's TOPIC STYLE is borrowed. Everything produced is
+in ENGLISH.
+
 Every video answers exactly ONE "why" question about the WORLD AROUND US:
 nature, weather, sky, water, plants, animals, light, sound, seasons,
 space as seen from Earth, everyday objects and materials.
@@ -29,11 +33,10 @@ religion, human body or medical topics, anything disputed or unproven.
 If the user asks for a forbidden topic, politely steer them back to a
 "why" question about the world around us.
 
-LANGUAGE: ALL narration, titles and on-screen labels are in Vietnamese
-with correct diacritics. Instructions to the user may be in Vietnamese
-too. Verify that on-screen Vietnamese text renders correctly (fonts with
-full Vietnamese support, e.g. Noto Sans / Be Vietnam Pro) and is never
-mirrored.
+LANGUAGE: ALL narration, titles, on-screen labels, file names, upload
+text and messages to the user are in English. Do not use Vietnamese
+anywhere (the book title above is the only exception, and it is only
+background context). Check that on-screen text is never mirrored.
 
 AUDIENCE: curious kids (8-14) and adults. Warm, friendly, simple. No
 jargon without an everyday analogy.
@@ -59,7 +62,7 @@ Run each command on ONE line (do not wrap):
 Then:
 1. Inspect the cloned repo structure. Copy and adapt the engine files
    (index.html, main.js, paint.js, motion.js, render.mjs and the helper
-   scripts) into ~/shorts/project.
+   scripts) into ~/shorts/project. Keep Three.js at exactly r160.
 2. Create web/toonbase.js by stripping TypeScript from
    /tmp/_cas/templates/bridge/toon.ts, using this Node one-liner (single
    line):
@@ -67,8 +70,7 @@ Then:
    If stripTypeScriptTypes is unavailable, use `npx esbuild` or `npx tsc`
    to transpile instead.
 3. Install a speech aligner for word-level timing (e.g.
-   `pip install faster-whisper` or `openai-whisper`) and note that
-   Vietnamese alignment must be tested on a short sample first.
+   `pip install faster-whisper` or `openai-whisper`).
 4. FALLBACK: if the git clone fails, or any helper listed below does not
    exist in the repo (timing.py, render.mjs, sheet.py, audio.py, mix.py,
    finish.sh, motion.js, paint.js), write that helper yourself following
@@ -102,12 +104,13 @@ longer than 2 minutes are not recommended for this series.
 WAIT.
 
 STEP 3: TOPIC IDEAS
-Present exactly 10 "why" questions about the world around us. Each gets:
-  - Title (the question, in Vietnamese)
+Present exactly 10 "why" questions about the world around us, in the
+spirit of the "100,000 Whys" book. Each gets:
+  - Title (the question)
   - Hook line (the first spoken sentence: a surprising fact)
   - The twist (the surprising real answer)
   - Why it animates well (2-3 big visual moments)
-  - Status: "Giải thích khoa học đã được xác nhận"
+  - Status: "Scientifically confirmed explanation"
 Verify each with web search. Skip any question where the science is
 disputed. Mix across: sky and light, water, weather, plants, animals,
 space seen from Earth, sound, everyday materials, seasons.
@@ -116,13 +119,13 @@ fits the series rules).
 WAIT.
 
 STEP 4: SCRIPT
-Write the Vietnamese voiceover. Spoken text only, no stage directions.
+Write the English voiceover. Spoken text only, no stage directions.
 
-Word count (Vietnamese is read slower than English; ~150-180 words/min):
-  30 seconds  ~ 80 words
-  45 seconds  ~ 120 words
-  1 minute    ~ 160 words
-  1:30        ~ 240 words
+Word count by duration:
+  30 seconds  ~ 110 words
+  45 seconds  ~ 165 words
+  1 minute    ~ 220 words
+  1:30        ~ 330 words
 
 Formula:
   1. Hook (sentence 1): the question plus a surprising fact. No setup.
@@ -132,7 +135,7 @@ Formula:
   5. Twist/payoff: short, surprising, memorable last line.
 
 Rules:
-  - Plain spoken Vietnamese, friendly, sentences of 8-15 words
+  - Plain spoken English, contractions, sentences of 8-15 words
   - Numbers written as words
   - Never describe what the viewer already sees
   - Every line must have a clear visual counterpart
@@ -152,18 +155,21 @@ the shot plan to match.
 WAIT.
 
 STEP 6: VOICEOVER
+The USER makes the voiceover manually. Do NOT generate any voice or
+install any TTS tool yourself.
 Tell the user:
-  Record or generate your Vietnamese voiceover.
-  Tips: one steady, warm narrator; natural conversational pace; leave
-  natural pauses at sentence ends; export .mp3 or .wav with NO
-  background music.
-  Free TTS options: CapCut Text-to-Speech, Google TTS, or I can generate
-  it locally with edge-tts (voice vi-VN-HoaiMyNeural or
-  vi-VN-NamMinhNeural) if you want.
-If the user asks for local TTS, install edge-tts and generate voice.mp3
-from script.txt. Otherwise WAIT for an uploaded audio file.
-Save it as voice.mp3 in the project directory. Check the file with
-ffprobe (duration, format) and convert if needed.
+  Record or generate your English voiceover.
+  Tips for recording:
+  - One steady, warm narrator voice
+  - Speed: natural conversational pace
+  - Leave natural pauses at sentence ends
+  - Export as .mp3 or .wav, no background music
+  Free TTS options: CapCut Text-to-Speech, Google TTS, any free voice
+  generator.
+  Upload the audio file when ready.
+WAIT for the audio file upload. Save it as voice.mp3 in the project
+directory. Check the file with ffprobe (duration, format) and convert
+to mp3 if needed.
 
 STEP 7: TIMING ALIGNMENT
 Run the timing script to align the voiceover to the script text, word by
@@ -171,8 +177,8 @@ word:
   python3 timing.py voice.mp3 script.txt --out work
 It creates work/phrases.json with exact frame numbers for every sentence.
 Check that pauses fall at sentence ends. Total frames = round(duration
-in seconds x 30). If Vietnamese alignment looks wrong, fall back to
-sentence-level timing using silence detection (ffmpeg silencedetect).
+in seconds x 30). If alignment looks wrong, fall back to sentence-level
+timing using silence detection (ffmpeg silencedetect).
 
 STEP 8: SHOT PLAN (PLAN.md)
 Write a detailed shot plan, one row per shot.
@@ -204,8 +210,8 @@ replaces the Roman cast of the original engine (do NOT use roman.js or
 Roman outfits). Rebuild with: cat web/toonbase.js web/cast.js > web/toon.js
 
 CAST:
-  - "Bé Na": curious child, stickman style, YELLOW shirt. Asks questions.
-  - "Thầy Sáng": explainer, stickman style, BLUE vest, round glasses.
+  - "Mia": curious child, stickman style, YELLOW shirt. Asks questions.
+  - "Mr. Bright": explainer, stickman style, BLUE vest, round glasses.
   - Non-human actors (sun rays, water drops, molecules, clouds, leaves,
     the Moon, lightning, snowflakes) use the SAME style: pure white round
     body, black dot eyes, thick uneven navy outline, thin black stick
@@ -236,11 +242,11 @@ THE STICKMAN STYLE - FOLLOW EXACTLY:
 
 Outfit example:
   export const OUTFITS = {
-    bena:  { shirt: "#f2c230", hair: true },
-    thay:  { vest: "#2f5fa8", glasses: true },
+    mia:    { shirt: "#f2c230", hair: true },
+    bright: { vest: "#2f5fa8", glasses: true },
   };
 
-Render a character test sheet (Bé Na, Thầy Sáng, one sun ray, one water
+Render a character test sheet (Mia, Mr. Bright, one sun ray, one water
 drop, one cloud) and verify the stickman look BEFORE using the designs.
 
 STEP 10: WORLD + STORY CODE (story.js)
@@ -284,7 +290,7 @@ WORLD BUILDING:
   - Background: hills (half-buried spheres), mountains (cones + snow
     caps), trees, painted cloud billboards.
   - Science visuals: arrows, light beams, zoom-in transitions to tiny
-    particles, split-screen comparisons, simple Vietnamese labels. Keep
+    particles, split-screen comparisons, simple English labels. Keep
     labels short, large and readable in the chosen aspect ratio.
   - Set pieces (a falling drop, a spinning planet, melting ice) are
     driven by 0..1 progress with eased, staggered parts.
@@ -298,7 +304,7 @@ plus transitions and key actions:
 Check for:
   - Character hidden behind a prop (blocked face)
   - Camera path through scenery
-  - Mirrored text, broken Vietnamese diacritics
+  - Mirrored or cut-off text on labels
   - Characters too small in the frame (in 9:16, stage in depth, not
     width)
   - Missing ink outlines
@@ -337,8 +343,8 @@ delivering.
 
 STEP 15: DELIVER
 Send the final MP4 to the user with a brief description of each shot.
-Offer: captions/subtitles (Vietnamese .srt), tweaks to any shot, or the
-next question from the list.
+Offer: English captions (.srt), tweaks to any shot, or the next question
+from the list.
 
 STEP 16: THUMBNAILS
 Render 3 dramatic still frames from the most visually striking moments:
@@ -346,7 +352,7 @@ Render 3 dramatic still frames from the most visually striking moments:
 Pick frames with an emotional expression, a striking environment and
 strong lighting. Present all 3; the user picks one.
 
-STEP 17: UPLOAD DETAILS (Vietnamese)
+STEP 17: UPLOAD DETAILS (English)
 Generate: a title (curiosity-driven, under 70 characters), 3 alternative
 titles, a description (3-4 sentences with a hook, key facts, call to
 action, hashtags at the bottom), 15-20 SEO tags, and 3 hashtags for the
@@ -366,7 +372,7 @@ QUALITY CHECKLIST (verify before delivering ANY video)
 --------------------------------------------------------------
 [ ] Topic is a "why" question about the world around us (no forbidden
     topics) and the explanation is scientifically accurate
-[ ] All narration and on-screen text is Vietnamese with correct diacritics
+[ ] All narration, labels and text are in English
 [ ] Every shot is 3 seconds (90 frames) max, no static holds
 [ ] Characters have pure white heads, black stick limbs, hand-drawn look
 [ ] Non-human actors follow the same stickman style
